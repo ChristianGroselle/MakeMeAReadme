@@ -104,14 +104,12 @@ function init() {
       },
       {
         type: "input",
-        name: "additional contact information",
+        name: "email",
         message: email,
       },
     ])
     .then((answers) => {
-      // Create README.md file with user input
-      let readme = `# ${answers.title} \n\n## Description \n${answers.description} \n\n## Installation \n${answers.installation} \n\n## Usage \n${answers.usage} \n\n## Contributing \n${answers.contributing} \n\n## Tests \n${answers.tests} \n\n## Questions \n${answers.questions}`;
-      console.log(readme);
+      writeToFile("README.md", gMUtil(answers));
     });
 }
 
