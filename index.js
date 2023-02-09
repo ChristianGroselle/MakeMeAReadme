@@ -109,7 +109,7 @@ function init() {
       },
     ])
     .then((answers) => {
-      writeToFile("README.md", gMUtil(answers));
+      writeToFile("./dist/README.md", gMUtil(answers));
     });
 }
 

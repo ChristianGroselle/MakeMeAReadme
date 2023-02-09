@@ -86,27 +86,37 @@ function renderLicenseBadge(license) {
   }
 }
 
-// // TODO: Create a function that returns the license link
-// // If there is no license, return an empty string
-// function renderLicenseLink(license) {}
-
-// // TODO: Create a function that returns the license section of README
-// // If there is no license, return an empty string
-// function renderLicenseSection(license) {}
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}   ${renderLicenseBadge(
     data.license
-  )}\n\n## Description \n${data.description} \n\n## Installation \n${
-    data.installation
-  } \n\n## Usage \n${data.usage} \n\n## Contributing \n${
-    data.contributing
-  } \n\n## Tests \n${data.tests} \n\n## License \n This project uses the ${
-    data.license
-  } license. \n\n## Questions \n${
-    data.questions
-  } \n\n## Additonal contact info \n${data.email}`;
+  )}\n\n## Description \n${data.description} \n\n## Table of Contents \n
+  ---
+
+  -[Description](#description) \n
+  -[Installation](#installation) \n
+  -[Usage](#usage) \n
+  -[Contributing](#contributing) \n
+  -[Tests](#tests) \n
+  -[License](#license) \n
+  -[Questions](#questions) \n
+  -[Additional contact info](#additional-contact-info)
+
+  \n\n## Installation \n
+  ---
+  \n${data.installation} \n\n## Usage \n
+  ---
+  \n${data.usage} \n\n## Contributing \n
+  --- 
+  \n${data.contributing} \n\n## Tests \n
+  --- 
+  \n${data.tests} \n\n## License \n
+  --- 
+  \n This project uses the ${data.license} license. \n\n## Questions \n
+  --- 
+  \n${data.questions} \n\n## Additional contact info \n
+  --- 
+  \n${data.email}`;
 }
 
 module.exports = generateMarkdown;
